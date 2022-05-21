@@ -1,16 +1,58 @@
 # Introduction
-Software webpack template for nodejs javascript scripting language : version 0.1
+A Tcp server can be a TCP or an IPC server depending on what it listens to.
 
 ## Example
 ```js
+const TraceManager = require('trace-manager')
+
 // package define
-const Template = require('../src')
+const Tcp = require('package-tcp-javascript')
 
 // module instance
-var template = new Template()
+var tcp = new Tcp()
 
-// a normal status code is returned when the package runs successfully.
-process.exit(template instanceof Template == true ? 0 : 1)
+// trace manager
+var tracking = new TraceManager()
+
+// new tcp server
+var server = tcp.server()
+
+/**
+ * tcp warning
+ * @param {event} event event.chunk, event.stream, event.error
+ */
+tcp.event('tcp-warn', () => {
+  // Tracking
+  tracking.warn(`${process.pid}\ttcp-warning\t X\t`)
+})
+
+/**
+ * tcp stream
+ * @param {event} event event.chunk, event.stream
+ */
+tcp.event('tcp-stream', (event) => {
+  tracking.info(`${process.pid}\ttcp-stream\t⚡️\t`, {
+    from: event.stream.remoteAddress,
+    data: event.chunk,
+  })
+})
+
+/**
+ * tcp response
+ * @param {event} event event.chunk, event.stream
+ */
+tcp.event('tcp-response', (event) => {
+  tracking.info(`${process.pid}\ttcp-response\t⏪\t`, {
+    from: event.stream.remoteAddress,
+    data: event.chunk,
+  })
+})
+
+// listener
+server.listen(parseInt(process.env.TCP_PORT), () => {
+  // Tracking [ info ]
+  tracking['info'](`${process.pid}\ttcp-server\t✅\t`, parseInt(process.env.TCP_PORT))
+})
 ```
 
 # Getting Started
