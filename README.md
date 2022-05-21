@@ -1,5 +1,5 @@
 # Introduction
-Software webpack template for nodejs javascript scripting language : version 0.1
+A Tcp server can be a TCP or an IPC server depending on what it listens to.
 
 ## Example
 ```js
