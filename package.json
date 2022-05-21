@@ -68,6 +68,7 @@
     "prettier": "2.6.2"
   },
   "dependencies": {
+    "package-tcp-javascript": "^0.0.1",
     "trace-manager": "^0.0.5"
   }
 }
