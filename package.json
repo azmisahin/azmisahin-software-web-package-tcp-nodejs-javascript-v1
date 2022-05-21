@@ -66,5 +66,8 @@
     "jest-junit": "^13.2.0",
     "jsdoc": "^3.6.10",
     "prettier": "2.6.2"
+  },
+  "dependencies": {
+    "trace-manager": "^0.0.5"
   }
 }
