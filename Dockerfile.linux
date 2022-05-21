@@ -1,0 +1,46 @@
+# base operation system image
+FROM node:latest AS production
+
+# Metadata indicating an image maintainer.
+LABEL maintainer="Azmi ŞAHİN <azmisahin@outlook.com>"
+
+# product arguments
+ARG ENV="production"
+ARG NAME="template"
+
+# default arguments for build
+ARG WORK_DIR="/template"
+ARG BUILD_DIR="build"
+ARG DIST_DIR="dist"
+
+# default arguments for application
+
+
+# product environment
+ENV ENV=${ENV}
+ENV NAME=${NAME}
+
+# default envionment for build
+ENV WORK_DIR=${WORK_DIR}
+ENV BUILD_DIR=${BUILD_DIR}
+ENV DIST_DIR=${DIST_DIR}
+
+# default environment for application
+
+
+# make the 'application' folder the current working directory
+WORKDIR ${WORK_DIR}
+
+# copy project file the working directory
+COPY . .
+
+# install project dependencies
+RUN npm install
+
+# build
+RUN mkdir ${BUILD_DIR} && \
+    cd ${BUILD_DIR} && \
+    mkdir ${DIST_DIR}
+
+# test
+CMD ["npm", "run", "test:features"]

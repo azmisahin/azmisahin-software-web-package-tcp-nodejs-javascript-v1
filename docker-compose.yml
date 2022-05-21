@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  application:
+    build:
+      context: .
+      # load operating system container
+      dockerfile: Dockerfile.${CONTAINER}
+      args:
+        # build
+        NAME: ${NAME}
+        WORK_DIR: ${WORK_DIR}
+        BUILD_DIR: ${BUILD_DIR}
+        DIST_DIR: ${DIST_DIR}
+
+        # application
+
+      labels:
+        com.azmisahin.description: ${NAME}
+        com.azmisahin.department: "DEVOPS"
+      # stage
+      target: ${ENV}
+    container_name: ${NAME}-${ENV}-${CONTAINER}
+    environment:
+      # build
+      NAME: ${NAME}
+      WORK_DIR: ${WORK_DIR}
+      BUILD_DIR: ${BUILD_DIR}
+      DIST_DIR: ${DIST_DIR}
+
+      # application
+
+    networks:
+      default: null
+    restart: "no"
+    tty: true

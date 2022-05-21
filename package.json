@@ -1,0 +1,70 @@
+{
+  "name": "package-template-javascript",
+  "version": "0.1.1",
+  "description": "Software webpack template for nodejs javascript scripting language : version 0.1",
+  "main": "src",
+  "directories": {
+    "doc": "docs",
+    "test": "tests",
+    "lib": "src",
+    "example": "example"
+  },
+  "scripts": {
+    "lint:config": "eslint docs --fix --no-error-on-unmatched-pattern",
+    "lint:src": "eslint src --fix --no-error-on-unmatched-pattern",
+    "lint:test-unit": "eslint tests/unit --fix --no-error-on-unmatched-pattern",
+    "lint": "npm run lint:config && npm run lint:src && npm run lint:test-unit",
+    "prettier": "prettier --write docs src tests *.js *.json",
+    "test:unit": "jest --passWithNoTests --detectOpenHandles",
+    "test:text": "jest --passWithNoTests --detectOpenHandles --no-color 2>reports/test/test.txt",
+    "test:features": "npx cucumber-js",
+    "test": "npm run test:unit && npm run test:features",
+    "coverage:html": "jest --collectCoverage --passWithNoTests --detectOpenHandles --coverageReporters=html --coverageDirectory=reports/coverage",
+    "coverage:json": "jest --collectCoverage --passWithNoTests --detectOpenHandles --coverageReporters=json --coverageDirectory=reports/test",
+    "coverage:text": "jest --collectCoverage --passWithNoTests --detectOpenHandles --coverageReporters=text --coverageDirectory=reports/test > reports/test/coverage.txt",
+    "coverage:xml": "jest --collectCoverage --passWithNoTests --detectOpenHandles --coverageReporters=cobertura --coverageDirectory=reports/test",
+    "coverage": "jest --collectCoverage --passWithNoTests --detectOpenHandles",
+    "document": "jsdoc -c jsdoc.json",
+    "build": "npm run prettier && npm run lint && npm run test && npm run coverage && npm run document",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azmisahin/com-azmisahin-software-web-package-template-nodejs-javascript-v1.git"
+  },
+  "engines": {
+    "node": ">=16.14.2",
+    "vscode": "^1.22.0"
+  },
+  "keywords": [
+    "nodejs",
+    "linux",
+    "docker",
+    "template",
+    "package",
+    "library",
+    "module",
+    "conventional-commits",
+    "dev-container"
+  ],
+  "author": {
+    "name": "Azmi ŞAHİN",
+    "email": "azmisahin@outlook.com",
+    "url": "https://github.com/azmisahin"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azmisahin/com-azmisahin-software-web-package-template-nodejs-javascript-v1/issues"
+  },
+  "homepage": "https://github.com/azmisahin/com-azmisahin-software-web-package-template-nodejs-javascript-v1#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^8.2.1",
+    "better-docs": "^2.7.2",
+    "eslint": "^8.15.0",
+    "husky": "^8.0.0",
+    "jest": "^28.1.0",
+    "jest-junit": "^13.2.0",
+    "jsdoc": "^3.6.10",
+    "prettier": "2.6.2"
+  }
+}
