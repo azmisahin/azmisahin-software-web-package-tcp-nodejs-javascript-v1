@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Library for node js projects.
+ * package-tcp
  */
 
 /**
  * @class
- * Template Library
+ * Tcp
  *
  * @example
  *
@@ -43,7 +43,7 @@ class Template {
 }
 
 /**
- * Template Library
+ * Tcp Library
  * @module template
  */
 module.exports = Template

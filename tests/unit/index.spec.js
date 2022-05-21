@@ -2,7 +2,7 @@
 const assert = require('assert').strict
 
 // Target condination.
-const target = 'template'
+const target = 'tcp'
 const Template = require('../../src')
 
 /**

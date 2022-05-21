@@ -8,10 +8,10 @@ LABEL maintainer="Azmi ŞAHİN <azmisahin@outlook.com>"
 
 # product arguments
 ARG ENV="development"
-ARG NAME="template"
+ARG NAME="package-tcp-javascript"
 
 # default arguments for build
-ARG WORK_DIR="/template"
+ARG WORK_DIR="/package-tcp-javascript"
 ARG BUILD_DIR="build"
 ARG DIST_DIR="dist"
 

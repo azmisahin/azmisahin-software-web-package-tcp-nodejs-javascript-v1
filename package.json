@@ -1,7 +1,7 @@
 {
-  "name": "package-template-javascript",
-  "version": "0.1.1",
-  "description": "Software webpack template for nodejs javascript scripting language : version 0.1",
+  "name": "package-tcp-javascript",
+  "version": "0.0.1",
+  "description": "A Tcp server can be a TCP or an IPC server depending on what it listens to.",
   "main": "src",
   "directories": {
     "doc": "docs",
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/azmisahin/com-azmisahin-software-web-package-template-nodejs-javascript-v1.git"
+    "url": "git+https://github.com/azmisahin/azmisahin-software-web-package-tcp-nodejs-javascript-v1.git"
   },
   "engines": {
     "node": ">=16.14.2",
@@ -40,7 +40,7 @@
     "nodejs",
     "linux",
     "docker",
-    "template",
+    "tcp",
     "package",
     "library",
     "module",
@@ -54,9 +54,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/azmisahin/com-azmisahin-software-web-package-template-nodejs-javascript-v1/issues"
+    "url": "https://github.com/azmisahin/azmisahin-software-web-package-tcp-nodejs-javascript-v1/issues"
   },
-  "homepage": "https://github.com/azmisahin/com-azmisahin-software-web-package-template-nodejs-javascript-v1#readme",
+  "homepage": "https://github.com/azmisahin/azmisahin-software-web-package-tcp-nodejs-javascript-v1#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^8.2.1",
     "better-docs": "^2.7.2",
