@@ -8,14 +8,24 @@ LABEL maintainer="Azmi ŞAHİN <azmisahin@outlook.com>"
 
 # product arguments
 ARG ENV="development"
-ARG NAME="template"
+ARG NAME="package-tcp-javascript"
 
 # default arguments for build
-ARG WORK_DIR="/template"
+ARG WORK_DIR="/package-tcp-javascript"
 ARG BUILD_DIR="build"
 ARG DIST_DIR="dist"
 
 # default arguments for application
+# SWICH
+ARG SWICH_TRACKING_TRACE="true"
+ARG SWICH_TRACKING_DEBUG="true"
+ARG SWICH_TRACKING_INFO="true"
+ARG SWICH_TRACKING_WARN="true"
+ARG SWICH_TRACKING_ERROR="true"
+ARG SWICH_TRACKING_VERBOSE="true"
+ARG SWICH_TRACKING_REPORT="true"
+# SERVER
+ARG TCP_PORT=50001
 
 # product environment
 ENV ENV=${ENV}
@@ -27,6 +37,16 @@ ENV BUILD_DIR=${BUILD_DIR}
 ENV DIST_DIR=${DIST_DIR}
 
 # default environment for application
+# SWICH
+ENV SWICH_TRACKING_TRACE=${SWICH_TRACKING_TRACE}
+ENV SWICH_TRACKING_DEBUG=${SWICH_TRACKING_DEBUG}
+ENV SWICH_TRACKING_INFO=${SWICH_TRACKING_INFO}
+ENV SWICH_TRACKING_WARN=${SWICH_TRACKING_WARN}
+ENV SWICH_TRACKING_ERROR=${SWICH_TRACKING_ERROR}
+ENV SWICH_TRACKING_VERBOSE=${SWICH_TRACKING_VERBOSE}
+ENV SWICH_TRACKING_REPORT=${SWICH_TRACKING_REPORT}
+# SERVER
+ENV TCP_PORT=${TCP_PORT}
 
 # make the 'application' folder the current working directory
 WORKDIR ${WORK_DIR}

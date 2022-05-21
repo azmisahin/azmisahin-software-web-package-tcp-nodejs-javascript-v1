@@ -16,6 +16,16 @@ services:
         BUILD_DIR: ${BUILD_DIR}
         DIST_DIR: ${DIST_DIR}
         # application
+        # SWICH
+        SWICH_TRACKING_TRACE: "true"
+        SWICH_TRACKING_DEBUG: "true"
+        SWICH_TRACKING_INFO: "true"
+        SWICH_TRACKING_WARN: "true"
+        SWICH_TRACKING_ERROR: "true"
+        SWICH_TRACKING_VERBOSE: "true"
+        SWICH_TRACKING_REPORT: "true"
+        # SERVER
+        TCP_PORT: 50001
       labels:
         com.azmisahin.description: ${NAME}
         com.azmisahin.department: "DEVOPS"
@@ -30,7 +40,16 @@ services:
       DIST_DIR: ${DIST_DIR}
 
       # application
-
+      # SWICH
+      SWICH_TRACKING_TRACE: "true"
+      SWICH_TRACKING_DEBUG: "true"
+      SWICH_TRACKING_INFO: "true"
+      SWICH_TRACKING_WARN: "true"
+      SWICH_TRACKING_ERROR: "true"
+      SWICH_TRACKING_VERBOSE: "true"
+      SWICH_TRACKING_REPORT: "true"
+      # SERVER
+      TCP_PORT: 50001
     volumes:
       - ..:/workspace:cached
       
